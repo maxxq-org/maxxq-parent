@@ -7,8 +7,17 @@
 	<artifactId>maxxq-parent</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
+
 	<name>maxxq-parent</name>
 	<description>MaxxQ Parent POM</description>
+	<url>https://github.com/maxxq-org/maxxq-parent</url>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
 
 	<properties>
 		<java.version>17</java.version>
@@ -234,5 +243,13 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub maxxq.org Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/maxxq-org/maven</url>
+		</repository>
+	</distributionManagement>
 
 </project>
