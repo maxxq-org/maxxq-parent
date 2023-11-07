@@ -246,10 +246,15 @@
 
 	<distributionManagement>
 		<repository>
-			<id>github</id>
+			<id>releases</id>
 			<name>GitHub maxxq.org Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/maxxq-org/maven</url>
+			<url>https://maven.pkg.github.com/maxxq-org/maven-releases</url>
 		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>GitHub maxxq.org Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/maxxq-org/maven-snapshots</url>
+		</snapshotRepository>
 	</distributionManagement>
 
 </project>
