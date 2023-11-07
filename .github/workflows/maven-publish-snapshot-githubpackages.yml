@@ -8,6 +8,9 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v4
@@ -21,6 +24,6 @@ jobs:
       - name: Release Maven package
         run: mvn --batch-mode deploy
         env:
-          GITHUB_TOKEN: ${{ secrets.PACKAGES_ACCESS }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           gpg_private_key: ${{ secrets.gpg_private_key }}
           gpg_passphrase: ${{ secrets.gpg_passphrase }}
