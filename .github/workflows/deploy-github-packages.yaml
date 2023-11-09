@@ -1,0 +1,14 @@
+name: Deploy snapshot to github packages 
+
+# Run workflow when the workflow to check the quality is completed
+on:
+  push:
+    branches: [ master ]
+    
+jobs:
+  call-workflow-passing-data:
+    uses: maxxq-org/maxxq-workflows/.github/workflows/maven-publish-snapshot-githubpackages.yml@main
+    with:
+      java-version: '17'
+      maven-deployment-repo: 'https://maven.pkg.github.com/maxxq-org/maxxq-parent'
+ 
