@@ -243,13 +243,4 @@
 			</plugin>-->
 		</plugins>
 	</build>
-
-	<distributionManagement>
-		<repository>
-			<id>github</id>
-			<name>GitHub maxxq.org Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/maxxq-org/maxxq-parent</url>
-		</repository>
-	</distributionManagement>
-
 </project>
