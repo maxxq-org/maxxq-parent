@@ -10,5 +10,6 @@ jobs:
     uses: maxxq-org/maxxq-workflows/.github/workflows/maven-publish-snapshot-githubpackages.yml@main
     with:
       java-version: '17'
+      java-distribution: 'temurin'
       maven-deployment-repo: 'https://maven.pkg.github.com/maxxq-org/maxxq-parent'
  
