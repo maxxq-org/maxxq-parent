@@ -15,4 +15,5 @@ jobs:
       java-version: '17'
       java-distribution: 'temurin'
       maven-deployment-repo: 'https://maven.pkg.github.com/maxxq-org/maxxq-parent'
+    secrets: inherit
  
