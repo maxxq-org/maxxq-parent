@@ -1,4 +1,4 @@
-name: Deploy snapshot to github packages 
+name: Deploy snapshot to Maven S3
 
 # Run workflow when the workflow to check the quality is completed
 on:
