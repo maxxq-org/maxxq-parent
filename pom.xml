@@ -45,7 +45,7 @@
 				<plugin>
 					<groupId>org.owasp</groupId>
 					<artifactId>dependency-check-maven</artifactId>
-					<version>8.4.2</version>
+					<version>9.0.2</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -66,7 +66,7 @@
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>versions-maven-plugin</artifactId>
-					<version>2.16.1</version>
+					<version>2.16.2</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -202,6 +202,7 @@
 					<assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>
 					<failBuildOnCVSS>${owasp.CVSSv3.threshold}</failBuildOnCVSS>
 					<skip>${owasp.skip}</skip>
+					<nvdApiKey>42b4afcb-a542-4807-87c5-2496e9d48f72</nvdApiKey>
 				</configuration>
 				<executions>
 					<execution>
