@@ -5,7 +5,7 @@
 
 	<groupId>org.maxxq</groupId>
 	<artifactId>maxxq-parent</artifactId>
-	<version>1.0.2-SNAPSHOT</version>
+	<version>1.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>maxxq-parent</name>
@@ -45,7 +45,7 @@
 				<plugin>
 					<groupId>org.owasp</groupId>
 					<artifactId>dependency-check-maven</artifactId>
-					<version>11.1.0</version>
+					<version>12.0.1</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -66,22 +66,22 @@
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>versions-maven-plugin</artifactId>
-					<version>2.17.1</version>
+					<version>2.18.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>3.10.0</version>
+					<version>3.11.2</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-gpg-plugin</artifactId>
-					<version>3.2.5</version>
+					<version>3.2.7</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.5.0</version>
+					<version>3.5.2</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -106,7 +106,7 @@
 						<configuration>
 							<rules>
 								<requireMavenVersion>
-									<version>3.2.5</version>
+									<version>3.6.3</version>
 								</requireMavenVersion>
 							</rules>
 						</configuration>
@@ -183,7 +183,7 @@
 						<configuration>
 							<allowMinorUpdates>true</allowMinorUpdates>
 							<allowIncrementalUpdates>true</allowIncrementalUpdates>
-							<allowMajorUpdates>false</allowMajorUpdates>
+							<allowMajorUpdates>true</allowMajorUpdates>
 							<allowSnapshots>false</allowSnapshots>
 							<processDependencies>true</processDependencies>
 							<processDependencyManagement>true</processDependencyManagement>
@@ -202,7 +202,7 @@
 					<assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>
 					<failBuildOnCVSS>${owasp.CVSSv3.threshold}</failBuildOnCVSS>
 					<skip>${owasp.skip}</skip>
-					<nvdApiKey>42b4afcb-a542-4807-87c5-2496e9d48f72</nvdApiKey>
+					<nvdApiKey>${env.NVD_API_KEY}</nvdApiKey>
 				</configuration>
 				<executions>
 					<execution>
@@ -251,4 +251,25 @@
 			</plugin>-->
 		</plugins>
 	</build>
+	<profiles>
+		<profile>
+			<id>update</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>versions-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>use-latest-releases</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
